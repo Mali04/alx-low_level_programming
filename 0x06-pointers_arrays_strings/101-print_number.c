@@ -1,55 +1,52 @@
 #include "main.h"
 
 /**
- * print_num - print numbers
- * print_number - print numbers
- * @n: input int
- * Return: Nothimg
+ * base10 - power in 10 base
+ * @n: an exponent
+ * Return: returns 10 to power exponent
  */
+int base10(int n)
+{
+	int base = 10;
 
-void print_num(int n)
-{
-if (n < 10)
-	_putchar('0' + n);
-else if (n >= 10 && n < 100)
-{
-	_putchar('0' + n / 10);
-	_putchar('0' + n % 10);
-}
-else if (n >= 100 && n < 1000)
-{
-	_putchar('0' + n / 100);
-	_putchar('0' + n % 100 / 10);
-	_putchar('0' + n % 100 % 10);
-}
-else if (n >= 1000 && n < 10000)
-{
-	_putchar('0' + n / 1000);
-	_putchar('0' + n % 1000 / 100);
-	_putchar('0' + n % 1000 % 100 / 10);
-	_putchar('0' + n % 1000 % 100 % 10);
-
-}
+	while (n > 0)
+	{
+		base *= 10;
+		n--;
+	}
+	return (base);
 }
 
 /**
- * print_number - check code
- * @n: input int
- * Return: Nothing
+ * print_number - prints integers enters as parameters using putchar
+ * @n: integer to print
+ * Return: void
  */
-
 void print_number(int n)
 {
-if (n >= 0)
+	int power;
 
-	print_num(n);
+	power = base10(8);
 
-else
-{
-	_putchar('-');
-	n *= -1;
-	print_num(n);
+	if (n < 0)
+	{
+		_putchar('-');
+		n *= -1;
+	}
 
+	if (n == 0)
+		_putchar('0');
+
+	else
+	{
+		while (n / power == 0)
+			power /= 10;
+
+		while (power >= 1)
+		{
+			_putchar((n / power) + '0');
+			n %= power;
+			power /= 10;
+		}
+	}
 }
-}
-
