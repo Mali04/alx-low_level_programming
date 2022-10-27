@@ -8,3 +8,4 @@ char *cap_string(char *);
 char *leet(char *);
 void print_number(int n);
 void print_number(int n);
+void print_num(int n);
