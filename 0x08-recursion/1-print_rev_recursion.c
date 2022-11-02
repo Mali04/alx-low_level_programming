@@ -1,7 +1,7 @@
 nclude "main.h"
 
 /**
- * print_rev_recursion - check code
+ * _print_rev_recursion - check code
  * @s: input string
  * Return: Nothing
  */
