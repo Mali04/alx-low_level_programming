@@ -5,7 +5,7 @@
  * main - check code
  * @argc: nmbr of argm
  * @argv: array of argm
- * @Return: 0 if everything is okay , 1 if theres an error.
+ * Return: 0 if everything is okay , 1 if theres an error.
  */
 
 int main(int argc, char *argv[])
